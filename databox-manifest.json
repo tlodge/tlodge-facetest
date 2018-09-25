@@ -1,0 +1,50 @@
+{
+    "manifest-version": 1,
+    "name": "tlodge-facetest",
+    "version": "0.1.0",
+    "description": "testing face recognition",
+    "author": "tlodge",
+    "licence": "MIT",
+    "databox-type": "app",
+    "tags": [
+        "face"
+    ],
+    "homepage": "https://github.com/tlodge/tlodge-facetest",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tlodge/tlodge-facetest.git"
+    },
+    "packages": [
+        {
+            "id": "db52f151dee53",
+            "name": "new package",
+            "purpose": "to test",
+            "required": false,
+            "datastores": [
+                "a88343d4addd3"
+            ],
+            "benefits": ""
+        }
+    ],
+    "allowed-combinations": [],
+    "datasources": [
+        {
+            "type": "browserWebcamImage",
+            "required": true,
+            "name": "browserwebcam",
+            "clientid": "a88343d4addd3",
+            "granularities": []
+        },
+        {
+            "type": "personalLoggerActuator",
+            "required": false,
+            "name": "personalLoggerActuator",
+            "clientid": "personalLoggerActuator",
+            "granularites": []
+        }
+    ],
+    "network-permissions": [],
+    "resource-requirements": {},
+    "volumes": [],
+    "export-whitelist": []
+}
