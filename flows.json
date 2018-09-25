@@ -1,0 +1,127 @@
+[
+    {
+        "id": "db52f151dee53",
+        "label": "new package",
+        "type": "tab"
+    },
+    {
+        "id": "a88343d4addd3",
+        "type": "browserwebcam",
+        "z": "db52f151dee53",
+        "ptype": {
+            "a88343d4addd3": [
+                {
+                    "type": "identifier",
+                    "ordinal": "secondary",
+                    "description": "images can be used to identify individuals",
+                    "required": [
+                        "payload.image"
+                    ],
+                    "accretion": false,
+                    "status": "inferrable"
+                },
+                {
+                    "type": "personal",
+                    "subtype": "physical",
+                    "ordinal": "secondary",
+                    "status": "inferable",
+                    "description": "images can be used to infer your age",
+                    "required": [
+                        "payload.image"
+                    ],
+                    "accuracy": 0.8,
+                    "conditions": [
+                        {
+                            "type": "granularity",
+                            "granularity": {
+                                "threshold": 2,
+                                "unit": "megapixel"
+                            }
+                        }
+                    ],
+                    "accretion": false
+                }
+            ]
+        },
+        "name": "",
+        "subtype": "browserWebcamImage",
+        "x": 166.5,
+        "y": 191,
+        "wires": [
+            [
+                "ff73abace69638"
+            ]
+        ]
+    },
+    {
+        "id": "ff73abace69638",
+        "type": "facedetect",
+        "z": "db52f151dee53",
+        "ptype": {
+            "ff73abace69638": [
+                {
+                    "type": "identifier",
+                    "ordinal": "secondary",
+                    "description": "images can be used to identify individuals",
+                    "required": [
+                        "payload.image"
+                    ],
+                    "accretion": false,
+                    "status": "inferred"
+                }
+            ]
+        },
+        "name": "",
+        "x": 313.5,
+        "y": 247,
+        "wires": [
+            [
+                "858707a1441658"
+            ]
+        ]
+    },
+    {
+        "id": "858707a1441658",
+        "type": "webify",
+        "z": "db52f151dee53",
+        "ptype": {
+            "": [
+                {
+                    "type": "identifier",
+                    "ordinal": "secondary",
+                    "description": "images can be used to identify individuals",
+                    "required": [
+                        "payload.image"
+                    ],
+                    "accretion": false,
+                    "status": "inferred"
+                }
+            ],
+            "858707a1441658": []
+        },
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "This is the payload: {{payload}} !\n<img src={{payload}} />",
+        "x": 439,
+        "y": 172,
+        "wires": [
+            [
+                "bd8d4cc5aa94b"
+            ]
+        ]
+    },
+    {
+        "id": "bd8d4cc5aa94b",
+        "type": "app",
+        "z": "db52f151dee53",
+        "name": "",
+        "appId": "webapp",
+        "layout": null,
+        "x": 570.5,
+        "y": 241,
+        "wires": []
+    }
+]
